@@ -36,11 +36,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
-import com.krobothsoftware.commons.network.RequestBuilderAuthorization;
 import com.krobothsoftware.commons.network.CookieManager;
 import com.krobothsoftware.commons.network.NetworkHelper;
 import com.krobothsoftware.commons.network.NetworkHelper.Method;
 import com.krobothsoftware.commons.network.RequestBuilder;
+import com.krobothsoftware.commons.network.RequestBuilderAuthorization;
 import com.krobothsoftware.commons.network.Response;
 import com.krobothsoftware.commons.network.ResponseAuthenticate;
 import com.krobothsoftware.commons.network.ResponseRedirect;
@@ -411,7 +411,7 @@ public class PlayStationNetworkClient {
 					progressHelper.addIncrement(1);
 					progressHelper.update("Retrieving userinfo");
 					response = new RequestBuilder(
-							GET,
+							POST,
 							new URL(
 									String.format(
 											"http://us.playstation.com/uwps/PSNLoginCookie?cookieName=%s&id=%f",
